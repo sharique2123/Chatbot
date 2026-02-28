@@ -17,6 +17,60 @@ import re
 from datetime import datetime
 
 import streamlit as st
+import os
+import re
+import time
+import streamlit as st
+
+st.set_page_config(
+    page_title="Campus Buddy",
+    page_icon="🎓",
+    layout="wide"
+)
+if "intro_shown" not in st.session_state:
+    st.session_state.intro_shown = False
+
+if not st.session_state.intro_shown:
+
+    st.markdown("""
+    <style>
+    .intro {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 999999;
+        color: white;
+    }
+
+    .loader {
+        margin-top: 20px;
+        border: 6px solid rgba(255,255,255,0.3);
+        border-top: 6px solid white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    </style>
+
+    <div class="intro">
+        <h1>🎓 Campus Buddy</h1>
+        <p>Loading AI Assistant...</p>
+        <div class="loader"></div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    time.sleep(2)
+    st.session_state.intro_shown = True
+    st.rerun()
 from dotenv import load_dotenv
 import requests
 from bs4 import BeautifulSoup
@@ -857,8 +911,16 @@ advanced_css = """
     }
     
     .stTextInput > div > div > input {
-        background-color: rgba(255, 255, 255, 0.1) !important;
-        color: white !important;
+    background-color: black !important;
+    color: white !important;
+    border: 2px solid #667eea !important;
+    border-radius: 12px !important;
+    padding: 12px 15px !important;
+}
+
+.stTextInput > div > div > input::placeholder {
+    color: rgba(255,255,255,0.6) !important;
+}
         border: 2px solid rgba(255, 255, 255, 0.3) !important;
         border-radius: 12px !important;
         padding: 12px 15px !important;
@@ -1543,4 +1605,3 @@ else:
             </p>
         </div>
         """, unsafe_allow_html=True)
-
