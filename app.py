@@ -941,6 +941,11 @@ advanced_css = """
 """
 
 st.markdown(advanced_css, unsafe_allow_html=True)
+st.markdown("""
+<div style="position: fixed; bottom: 20px; right: 30px; color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; z-index: 3; text-align: right; font-weight: 500;">
+    Credit goes to: <strong style="color: rgba(255, 255, 255, 0.9);">Vertex</strong>
+</div>
+""", unsafe_allow_html=True)
 
 # =============================================================================
 # 3. ENVIRONMENT & API KEY VALIDATION
@@ -1538,3 +1543,4 @@ else:
             </p>
         </div>
         """, unsafe_allow_html=True)
+
