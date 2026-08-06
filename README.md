@@ -1,12 +1,42 @@
-Campus Buddy Pro
+# Campus Buddy Pro
 
-An AI-powered campus assistant supporting general AI conversations, PDF question answering, website crawling, and hybrid document + web search.
+## Overview
+An AI-powered campus assistant...
 
-Features
+## Features
+- AI Chat
+- PDF Q&A
+- Hybrid Search
+- Website Crawling
+- Internet Search
 
-🤖 AI Chat Mode
-📄 PDF Q&A
-🌐 Website Crawling
-🔍 Internet Search
-🔀 Hybrid Search
-⚡ Fast Llama-powered responses
+## Tech Stack
+- Python
+- Streamlit
+- LangChain
+- Groq
+- FAISS
+- HuggingFace
+- BeautifulSoup
+
+## Installation
+
+pip install -r requirements.txt
+
+## Usage
+
+streamlit run app.py
+
+## Screenshots
+
+(Home Page)
+
+(PDF Mode)
+
+(Hybrid Mode)
+
+## Future Improvements
+- User Authentication
+- Chat History
+- Database
+- Cloud Deployment
