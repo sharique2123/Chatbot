@@ -11,4 +11,3 @@ langchain-groq
 faiss-cpu
 duckduckgo-search
 sentence-transformers
-python-dotenv
